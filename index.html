@@ -9,10 +9,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="search-container">
-        <input type="text" class="search-bar" placeholder="enter url" />
-      </div>
-      <div class="result-container"></div>
+      <form class="js-search-form search-form">
+        <input
+          type="text"
+          class="js-search-input search-input"
+          placeholder="enter website url"
+        />
+        <button class="js-submit-btn submit-btn" type="submit">Submit</button>
+      </form>
+      <div class="js-result-container result-container"></div>
     </div>
     <script type="module" src="index.js"></script>
   </body>

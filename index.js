@@ -1,20 +1,39 @@
 import { getLogo } from "./getLogo.js";
 
-const searchBar = document.querySelector(".search-bar");
-const resultContainer = document.querySelector(".result-container");
+const searchInput = document.querySelector(".js-search-input");
+const searchForm = document.querySelector(".js-search-form");
+const resultContainer = document.querySelector(".js-result-container");
 
-searchBar.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-    const searchTerm = searchBar.value;
-    resultContainer.innerHTML = "";
-    getLogo(searchTerm).then((data) => {
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const searchTerm = searchInput.value;
+  showFetchingMessage();
+  getLogo(searchTerm).then((data) => {
+    console.log(data);
+    if (data != undefined) {
       renderLogo(data);
-    });
-  }
+    } else {
+      renderError();
+    }
+  });
 });
 
 function renderLogo(data) {
+  clearContainer();
   const logo = document.createElement("img");
   logo.src = data;
   resultContainer.appendChild(logo);
+}
+
+function clearContainer() {
+  resultContainer.innerHTML = "";
+}
+function showFetchingMessage() {
+  clearContainer();
+  resultContainer.innerHTML = `<p class="msg">Fetching...</p>`;
+}
+
+function renderError() {
+  clearContainer();
+  resultContainer.innerHTML = `<p class="msg">Invalid Url</p>`;
 }
