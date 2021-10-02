@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 :root {
   --color-primary: #191919;
 }
@@ -5,18 +10,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
 }
+.logo {
+  font-family: "Righteous", cursive;
+  font-size: 8rem;
+  margin-bottom: 2rem;
+  margin-top: -10rem;
+}
+
+.border-class {
+  border: 1px solid rgb(204, 204, 204);
+  overflow: hidden;
+  background: rgb(245, 248, 249);
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+}
+
 .result-container {
-  height: 90vh;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .result-container img {
-  width: 300px;
-}
-form {
-  height: 10vh;
+  width: 100%;
 }
 .search-input {
   margin-top: 20px;
@@ -41,11 +61,74 @@ form {
   cursor: pointer;
   transition: 0.25s ease-in-out;
 }
+.fas {
+  font-size: 1rem;
+  transform: rotate(90deg);
+}
 .submit-btn:hover {
   background: var(--color-primary);
   color: #fff;
 }
+.loader {
+  --path: #2f3545;
+  --dot: #5628ee;
+  --duration: 3s;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+.loader svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.loader svg circle {
+  fill: none;
+  stroke: var(--path);
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.loader svg circle {
+  stroke-dasharray: 150 50 150 50;
+  stroke-dashoffset: 75;
+  -webkit-animation: pathCircle var(--duration)
+    cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+    infinite;
+}
+
+@-webkit-keyframes pathCircle {
+  25% {
+    stroke-dashoffset: 125;
+  }
+  50% {
+    stroke-dashoffset: 175;
+  }
+  75% {
+    stroke-dashoffset: 225;
+  }
+  100% {
+    stroke-dashoffset: 275;
+  }
+}
+@keyframes pathCircle {
+  25% {
+    stroke-dashoffset: 125;
+  }
+  50% {
+    stroke-dashoffset: 175;
+  }
+  75% {
+    stroke-dashoffset: 225;
+  }
+  100% {
+    stroke-dashoffset: 275;
+  }
+}
+
 .msg {
   font-size: 1.8rem;
   font-weight: bold;
+  color: #b61919;
 }
