@@ -24,13 +24,8 @@ function renderLogo(data) {
   const logo = document.createElement("img");
   logo.src = data;
   resultContainer.appendChild(logo);
-<<<<<<< Updated upstream
   
 }
-=======
-}
-
->>>>>>> Stashed changes
 
 function clearContainer() {
   resultContainer.innerHTML = "";
