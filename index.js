@@ -33,11 +33,7 @@ function clearContainer() {
 function showFetchingMessage() {
   clearContainer();
   resultContainer.classList.remove("border-class");
-  resultContainer.innerHTML = `<div class="loader">
-  <svg viewBox="0 0 80 80">
-      <circle id="test" cx="40" cy="40" r="32"></circle>
-  </svg>
-</div>`;
+  resultContainer.innerHTML = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`;
 }
 
 function renderError() {
