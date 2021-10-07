@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Header";
 import getLogo from "./getLogo";
 import Image from "./Image";
+import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 
 function initializeDefaultUrl() {
@@ -35,6 +36,9 @@ function App() {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Get Logo</title>
+      </Helmet>
       <Header />
       <form className="search-form" onSubmit={handleSubmitEvent}>
         <input
