@@ -46,6 +46,7 @@ function App() {
           type="text"
           className="search-input"
           placeholder="Enter website url"
+          required
         />
         <button className="submit-btn" type="submit">
           Search
