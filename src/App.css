@@ -1,43 +1,17 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
 :root {
   --color-primary: #191919;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "Ubuntu", sans-serif;
-}
-.logo {
-  font-family: "Righteous", cursive;
-  font-size: 8rem;
-  margin-bottom: 2rem;
-  margin-top: -10rem;
 }
 
-.border-class {
-  border: 1px solid rgb(204, 204, 204);
-  overflow: hidden;
-  background: rgb(245, 248, 249);
-  padding: 1.5rem 1rem;
-  border-radius: 5px;
-}
-
-.result-container {
-  margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.result-container img {
-  width: 100%;
-}
 .search-input {
   margin-top: 20px;
   padding: 15px 10px;
@@ -61,14 +35,17 @@
   cursor: pointer;
   transition: 0.25s ease-in-out;
 }
-.fas {
-  font-size: 1rem;
-  transform: rotate(90deg);
-}
 .submit-btn:hover {
   background: var(--color-primary);
   color: #fff;
 }
+.result-container {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -123,9 +100,4 @@
   100% {
     transform: translate(24px, 0);
   }
-}
-.msg {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #b61919;
 }
