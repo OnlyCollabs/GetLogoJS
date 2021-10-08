@@ -14,13 +14,12 @@ function App() {
   const [searchTerm, setSearchTerm] = useState(() => initializeDefaultUrl());
   const [loading, setLoading] = useState(true);
 
-  console.log("render");
-  console.log(searchTerm);
-
+  console.log("render-comp");
   function handleSubmitEvent(e) {
     e.preventDefault();
     setSearchTerm(e.target[0].value);
     setLoading(true);
+    console.log("render-submit");
   }
 
   useEffect(() => {
@@ -31,6 +30,7 @@ function App() {
       } else {
         setLogoUrl("");
       }
+      console.log("render-getlogo");
     });
   }, [searchTerm]);
 
@@ -42,7 +42,7 @@ function App() {
       <Header />
       <form className="search-form" onSubmit={handleSubmitEvent}>
         <input
-          defaultValue="google.com"
+          defaultValue={searchTerm}
           type="text"
           className="search-input"
           placeholder="Enter website url"
