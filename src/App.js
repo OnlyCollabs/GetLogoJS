@@ -19,7 +19,6 @@ function App() {
     e.preventDefault();
     setSearchTerm(e.target[0].value);
     setLoading(true);
-    console.log("render-submit");
   }
 
   useEffect(() => {
@@ -30,7 +29,6 @@ function App() {
       } else {
         setLogoUrl("");
       }
-      console.log("render-getlogo");
     });
   }, [searchTerm]);
 
